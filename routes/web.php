@@ -6,6 +6,7 @@ use App\Http\Controllers\Apps\UserManagementController;
 use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\DashboardController;
 use App\Models\Menu;
+use App\Models\MenuSub;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,11 +33,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 
     Route::group(['namespace' => 'App\Http\Controllers'], function () {
-        foreach (Menu::all() as $r) {
-            // var_dump(App\Http\Controllers\MenuController::class);
-            // Route::name($r->name)->get($r->uri, $r->controller);
-        }
     });
+    // $menuSubs = MenuSub::all()->map(fn($item)=>$item->only((new MenuSub())->getFillable()));
+
+
+    // foreach (Menu::all() as $r) {
+    //     // var_dump(App\Http\Controllers\MenuController::class);
+    //     // Route::name($r->name)->get($r->uri, $r->controller);
+    // }
 });
 
 Route::get('/error', function () {

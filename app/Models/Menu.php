@@ -16,7 +16,6 @@ class Menu extends Model
     // Tentukan kolom yang bisa diisi
     protected $fillable = [
         'indexSort',
-        'grupMenu',
         'namaMenu',
         'statusMenu',
         'idUser',

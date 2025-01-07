@@ -14,9 +14,10 @@ return new class extends Migration {
             $table->id();
             $table->unsignedBigInteger('idMenu');
             $table->unsignedInteger('indexSort');
-            $table->json('pathMenu');
+            $table->string('group', 255);
+            $table->json('path');
             $table->string('namaMenuSub', 255);
-            // $table->string('controller', 255);
+            $table->string('statusMenuSub', 30)->default('Aktif');
             $table->unsignedBigInteger('idUser')->default(1);
             $table->timestamps();
 

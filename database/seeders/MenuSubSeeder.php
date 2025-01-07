@@ -15,10 +15,11 @@ class MenuSubSeeder extends Seeder
     {
         DB::table('menu_sub')->insert([
             [
-                'idMenu' => 2,
+                'idMenu' => 1,
                 'indexSort' => 1,
-                'pathMenu' => json_encode(['menu']),
-                'namaSubMenu' => 'Menu',
+                'group' => 'masterdata',
+                'path' => json_encode(['menu']),
+                'namaMenuSub' => 'Menu',
                 'created_at' => now(),
             ],
         ]);

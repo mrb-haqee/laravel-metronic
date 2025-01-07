@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Masterdata;
 
-use App\Models\MenuSub;
-use App\Http\Requests\StoreMenuSubRequest;
-use App\Http\Requests\UpdateMenuSubRequest;
+use App\Http\Controllers\Controller;
+use App\Models\Menu;
+use App\Http\Requests\StoreMenuRequest;
+use App\Http\Requests\UpdateMenuRequest;
 
-class MenuSubController extends Controller
+class MenuController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class MenuSubController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreMenuSubRequest $request)
+    public function store(StoreMenuRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class MenuSubController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(MenuSub $menuSub)
+    public function show(Menu $menu)
     {
         //
     }
@@ -43,7 +44,7 @@ class MenuSubController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(MenuSub $menuSub)
+    public function edit(Menu $menu)
     {
         //
     }
@@ -51,7 +52,7 @@ class MenuSubController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateMenuSubRequest $request, MenuSub $menuSub)
+    public function update(UpdateMenuRequest $request, Menu $menu)
     {
         //
     }
@@ -59,7 +60,7 @@ class MenuSubController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(MenuSub $menuSub)
+    public function destroy(Menu $menu)
     {
         //
     }
