@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Masterdata;
+namespace App\Http\Controllers\Apps\Masterdata;
 
+use App\DataTables\PermissionsDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\MenuSub;
 use App\Http\Requests\StoreMenuSubRequest;
@@ -12,9 +13,9 @@ class MenuSubController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(PermissionsDataTable $dataTable)
     {
-        //
+        return $dataTable->render('pages/apps.masterdata.menu.detail.list');
     }
 
     /**

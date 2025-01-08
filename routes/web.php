@@ -5,6 +5,8 @@ use App\Http\Controllers\Apps\RoleManagementController;
 use App\Http\Controllers\Apps\UserManagementController;
 use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Apps\Masterdata\MenuController;
+use App\Http\Controllers\Apps\Masterdata\MenuSubController;
 use App\Models\Menu;
 use App\Models\MenuSub;
 use Illuminate\Support\Facades\Route;
@@ -32,8 +34,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('/user-management/permissions', PermissionManagementController::class);
     });
 
-    Route::group(['namespace' => 'App\Http\Controllers'], function () {
+    Route::group(['prefix' => 'masterdata', 'as' => 'masterdata'], function () {
+
+        Route::group(['prefix' => 'menu', 'as' => 'menu'], function () {
+            Route::resource('/', MenuController::class);
+            Route::resource('/detail', MenuSubController::class);
+        });
+
     });
+
     // $menuSubs = MenuSub::all()->map(fn($item)=>$item->only((new MenuSub())->getFillable()));
 
 
