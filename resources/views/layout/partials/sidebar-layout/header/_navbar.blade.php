@@ -5,7 +5,7 @@
         @include(config('settings.KT_THEME_LAYOUT_DIR') . '/partials/sidebar-layout/search/_dropdown')
     </div>
     <!--end::Search-->
-    {{-- <!--begin::Activities-->
+    <!--begin::Activities-->
     <div class="app-navbar-item ms-1 ms-md-4">
         <!--begin::Drawer toggle-->
         <div class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px"
@@ -45,7 +45,7 @@
         @include('partials/menus/_my-apps-menu')
         <!--end::Menu wrapper-->
     </div>
-    <!--end::My apps links--> --}}
+    <!--end::My apps links-->
     <!--begin::User menu-->
     <div class="app-navbar-item ms-1 ms-md-4" id="kt_header_user_menu_toggle">
         <!--begin::Menu wrapper-->

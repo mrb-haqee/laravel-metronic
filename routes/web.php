@@ -7,8 +7,6 @@ use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Apps\Masterdata\MenuController;
 use App\Http\Controllers\Apps\Masterdata\MenuSubController;
-use App\Models\Menu;
-use App\Models\MenuSub;
 use Illuminate\Support\Facades\Route;
 
 /*
