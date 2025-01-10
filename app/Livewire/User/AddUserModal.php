@@ -94,16 +94,17 @@ class AddUserModal extends Component
 
                 // Emit a success event with a message
                 $this->dispatch('success', __('User updated'));
-            } else {
-                // Assign selected role for user
-                $user->assignRole($this->role);
-
-                // Send a password reset link to the user's email
-                Password::sendResetLink($user->only('email'));
-
-                // Emit a success event with a message
-                $this->dispatch('success', __('New user created'));
             }
+            // else {
+            //     // Assign selected role for user
+            //     $user->assignRole($this->role);
+
+            //     // Send a password reset link to the user's email
+            //     Password::sendResetLink($user->only('email'));
+
+            //     // Emit a success event with a message
+            //     $this->dispatch('success', __('New user created'));
+            // }
         });
 
         // Reset the form fields after successful submission

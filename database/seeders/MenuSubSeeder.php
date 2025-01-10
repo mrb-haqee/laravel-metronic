@@ -22,6 +22,30 @@ class MenuSubSeeder extends Seeder
                 'namaMenuSub' => 'Menu',
                 'created_at' => now(),
             ],
+            [
+                'idMenu' => 1,
+                'indexSort' => 1,
+                'group' => 'masterdata',
+                'path' => json_encode(['user']),
+                'namaMenuSub' => 'Users',
+                'created_at' => now(),
+            ],
+            [
+                'idMenu' => 1,
+                'indexSort' => 1,
+                'group' => 'masterdata',
+                'path' => json_encode(['role']),
+                'namaMenuSub' => 'Role',
+                'created_at' => now(),
+            ],
+            [
+                'idMenu' => 1,
+                'indexSort' => 1,
+                'group' => 'masterdata',
+                'path' => json_encode(['permission']),
+                'namaMenuSub' => 'Permission',
+                'created_at' => now(),
+            ],
         ]);
     }
 }
