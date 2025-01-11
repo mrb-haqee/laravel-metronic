@@ -33,6 +33,10 @@
                 </div>
                 <!--end:::Main-->
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2770f57291d64ceeb1210a6dc1953988e94f941f
                 {{-- @include(config('settings.KT_THEME_LAYOUT_DIR') . '/partials/sidebar-layout/_aside') --}}
             </div>
             <!--end::Wrapper-->
