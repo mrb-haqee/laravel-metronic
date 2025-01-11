@@ -15,18 +15,21 @@ var KTComponents = function () {
 			KTSwapper.init();
 			KTToggle.init();
 			KTScrolltop.init();
-			KTDialer.init();	
+			KTDialer.init();
 			KTImageInput.init();
-			KTPasswordMeter.init();	
+			KTPasswordMeter.init();
         }
-    }	
+    }
 }();
 
 // On document ready
 if (document.readyState === "loading") {
-	document.addEventListener("DOMContentLoaded", function() {
+	document.addEventListener("livewire:navigated", function() {
 		KTComponents.init();
 	});
+	// document.addEventListener("DOMContentLoaded", function() {
+	// 	KTComponents.init();
+	// });
  } else {
 	KTComponents.init();
  }

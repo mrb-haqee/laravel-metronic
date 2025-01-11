@@ -59,26 +59,27 @@
     <!--begin::Javascript-->
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
     @foreach (getGlobalAssets() as $path)
-        {!! sprintf('<script src="%s"></script>', asset($path)) !!}
+        {!! sprintf('<script data-navigate-once src="%s"></script>', asset($path)) !!}
     @endforeach
     <!--end::Global Javascript Bundle-->
 
     <!--begin::Vendors Javascript(used by this page)-->
     @foreach (getVendors('js') as $path)
-        {!! sprintf('<script src="%s"></script>', asset($path)) !!}
+        {!! sprintf('<script data-navigate-once src="%s"></script>', asset($path)) !!}
     @endforeach
     <!--end::Vendors Javascript-->
 
     <!--begin::Custom Javascript(optional)-->
     @foreach (getCustomJs() as $path)
-        {!! sprintf('<script src="%s"></script>', asset($path)) !!}
+        {!! sprintf('<script data-navigate-once src="%s"></script>', asset($path)) !!}
     @endforeach
     <!--end::Custom Javascript-->
     @stack('scripts')
     <!--end::Javascript-->
 
     <script>
-        $(document).on('livewire:init', () => {
+        document.addEventListener('livewire:init', () => {
+            // Toastr success and error messages
             Livewire.on('success', (message) => {
                 toastr.success(message);
             });
@@ -86,6 +87,7 @@
                 toastr.error(message);
             });
 
+            // SweetAlert notifications
             Livewire.on('swal', (message, icon, confirmButtonText) => {
                 if (typeof icon === 'undefined') {
                     icon = 'success';
@@ -105,6 +107,7 @@
             });
         });
     </script>
+
 
     @livewireScripts
 </body>

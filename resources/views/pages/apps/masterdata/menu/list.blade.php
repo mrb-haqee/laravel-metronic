@@ -72,7 +72,7 @@
 
     @push('scripts')
         {{ $dataTable->scripts() }}
-        <script>
+        <script data-navigate-once>
             $('#mySearchInput').on('keyup', function() {
                 window.LaravelDataTables['permissions-table'].search($(this).val()).draw();
             });

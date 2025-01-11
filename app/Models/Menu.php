@@ -24,7 +24,7 @@ class Menu extends Model
     // Tentukan kolom yang tidak bisa diisi
     protected $guarded = [];
 
-    public function subMenu()
+    public function menuSub()
     {
         return $this->hasMany(MenuSub::class, 'idMenu', 'id');
     }
