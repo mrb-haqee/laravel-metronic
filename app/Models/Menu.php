@@ -26,6 +26,6 @@ class Menu extends Model
 
     public function menuSub()
     {
-        return $this->hasMany(MenuSub::class, 'idMenu', 'id');
+        return $this->hasMany(MenuSub::class);
     }
 }

@@ -431,3 +431,17 @@ if (!function_exists('getIcon')) {
         return theme()->getIcon($name, $class, $type, $tag);
     }
 }
+
+if (!function_exists('loadScript')) {
+    /**
+     * Get icon
+     *
+     * @param $path
+     *
+     * @return string
+     */
+    function loadScript(string $path = '')
+    {
+        return file_exists(resource_path($path)) ? "function () {" . file_get_contents(resource_path($path)) . "}" : '';
+    }
+}

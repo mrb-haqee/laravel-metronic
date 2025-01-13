@@ -27,6 +27,6 @@ class MenuSub extends Model
 
     public function menu()
     {
-        return $this->belongsTo(Menu::class, 'idMenu', 'id');
+        return $this->belongsTo(Menu::class);
     }
 }

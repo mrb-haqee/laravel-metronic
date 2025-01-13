@@ -12,10 +12,10 @@ return new class extends Migration {
     {
         Schema::create('menu', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('indexSort');
-            $table->string('namaMenu', 255);
-            $table->string('statusMenu', 30)->default('Aktif');
-            $table->unsignedBigInteger('idUser')->default(1);
+            $table->unsignedInteger('index_sort');
+            $table->string('nama', 255);
+            $table->string('status', 30)->default('Aktif');
+            $table->unsignedBigInteger('user_id')->default(1);
             $table->timestamps();
         });
     }

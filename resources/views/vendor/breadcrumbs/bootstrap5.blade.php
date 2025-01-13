@@ -1,10 +1,10 @@
 @unless ($breadcrumbs->isEmpty())
     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
         @foreach ($breadcrumbs as $breadcrumb)
-            @if(!$loop->last)
+            @if (!$loop->last)
                 <!--begin::Item-->
                 <li class="breadcrumb-item text-muted">
-                    <a href="{{ $breadcrumb->url }}" class="text-muted text-hover-primary">
+                    <a href="{{ $breadcrumb->url }}" class="text-muted text-hover-primary" wire:navigate>
                         {{ $breadcrumb->title }}
                     </a>
                 </li>

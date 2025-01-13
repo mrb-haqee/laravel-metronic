@@ -16,8 +16,8 @@ class MenuSeeder extends Seeder
     {
         DB::table('menu')->insert([
             [
-                'indexSort' => 1,
-                'namaMenu' => 'Master Data',
+                'index_sort' => 1,
+                'nama' => 'Master Data',
                 'created_at' => now(),
             ],
         ]);

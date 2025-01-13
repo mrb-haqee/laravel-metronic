@@ -10,7 +10,15 @@
 
     Users
 
-    {{-- <div class="card">
+    <div class="py-5">
+        <div class="rounded border p-10 d-flex gap-4">
+            <button type="button" class="btn btn-primary" id="kt_page_loading_basic">
+                Toggle Page Loading
+            </button>
+        </div>
+    </div>
+
+    <div class="card">
         <!--begin::Card header-->
         <div class="card-header border-0 pt-6">
             <!--begin::Card title-->
@@ -50,7 +58,6 @@
 
         <!--begin::Card body-->
         <div class="card-body py-4">
-            hi
             <!--begin::Table-->
             <div class="table-responsive">
                 {{ $dataTable->table() }}
@@ -63,19 +70,19 @@
     @push('scripts')
         {{ $dataTable->scripts() }}
         <script>
-            document.getElementById('mySearchInput').addEventListener('keyup', function () {
+            document.getElementById('mySearchInput').addEventListener('keyup', function() {
                 window.LaravelDataTables['users-table'].search(this.value).draw();
             });
-            document.addEventListener('livewire:init', function () {
-                Livewire.on('success', function () {
+            document.addEventListener('livewire:init', function() {
+                Livewire.on('success', function() {
                     $('#kt_modal_add_user').modal('hide');
                     window.LaravelDataTables['users-table'].ajax.reload();
                 });
             });
-            $('#kt_modal_add_user').on('hidden.bs.modal', function () {
+            $('#kt_modal_add_user').on('hidden.bs.modal', function() {
                 Livewire.dispatch('new_user');
             });
         </script>
-    @endpush --}}
+    @endpush
 
 </x-default-layout>

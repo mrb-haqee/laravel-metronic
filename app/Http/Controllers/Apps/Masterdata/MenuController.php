@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Apps\Masterdata;
 
+use App\DataTables\MenuDataTable;
 use App\DataTables\PermissionsDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\Menu;
@@ -13,7 +14,7 @@ class MenuController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(PermissionsDataTable $dataTable)
+    public function index(MenuDataTable $dataTable)
     {
         return $dataTable->render('pages/apps.masterdata.menu.list');
     }

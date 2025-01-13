@@ -12,17 +12,17 @@ return new class extends Migration {
     {
         Schema::create('menu_sub', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('idMenu');
-            $table->unsignedInteger('indexSort');
+            $table->unsignedBigInteger('menu_id');
+            $table->unsignedInteger('index_sort');
             $table->string('group', 255);
             $table->json('path');
-            $table->string('namaMenuSub', 255);
-            $table->string('statusMenuSub', 30)->default('Aktif');
-            $table->unsignedBigInteger('idUser')->default(1);
+            $table->string('nama_sub', 255);
+            $table->string('status_sub', 30)->default('Aktif');
+            $table->unsignedBigInteger('user_id')->default(1);
             $table->timestamps();
 
             // Tambahkan foreign key
-            $table->foreign('idMenu')->references('id')->on('menu')->onDelete('cascade');
+            $table->foreign('menu_id')->references('id')->on('menu')->onDelete('cascade');
         });
     }
 

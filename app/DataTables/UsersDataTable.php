@@ -16,10 +16,14 @@ class UsersDataTable extends DataTable
      *
      * @param QueryBuilder $query Results from query() method.
      */
+
+    private $path = 'views/pages/apps/user-management/users';
+
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
             ->rawColumns(['user', 'last_login_at'])
+
             ->editColumn('user', function (User $user) {
                 return view('pages/apps.user-management.users.columns._user', compact('user'));
             })
@@ -56,11 +60,11 @@ class UsersDataTable extends DataTable
             ->setTableId('users-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->dom('rt' . "<'row'<'col-sm-12'tr>><'d-flex justify-content-between'<'col-sm-12 col-md-5'i><'d-flex justify-content-between'p>>",)
+            // ->dom('rt' . "<'row'<'col-sm-12'tr>><'d-flex justify-content-between'<'col-sm-12 col-md-5'i><'d-flex justify-content-between'p>>",)
             ->addTableClass('table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer text-gray-600 fw-semibold')
             ->setTableHeadClass('text-start text-muted fw-bold fs-7 text-uppercase gs-0')
             ->orderBy(2)
-            ->drawCallback("function() {" . file_get_contents(resource_path('views/pages/apps/user-management/users/columns/_draw-scripts.js')) . "}");
+            ->drawCallback(loadScript($this->path . '/columns/_draw-scripts.js'));
     }
 
     /**

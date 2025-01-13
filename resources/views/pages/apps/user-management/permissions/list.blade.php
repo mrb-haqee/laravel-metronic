@@ -9,19 +9,7 @@
     @endsection
     Permissions
 
-    {{-- {{ dump($menus) }} --}}
-
-    @foreach ($menus as $menu)
-        <pre>{{ var_dump($menu->toArray()) }}</pre>
-        <p>Menu: {{ $menu->namaMenu }}</p>
-
-        @foreach ($menu->menuSub as $submenu)
-            <p>Submenu: {{ $submenu->namaMenuSub }}</p>
-        @endforeach
-    @endforeach
-
-
-    {{-- <div class="card">
+    <div class="card">
         <!--begin::Card header-->
         <div class="card-header border-0 pt-6">
             <!--begin::Card title-->
@@ -97,6 +85,6 @@
                 });
             });
         </script>
-    @endpush --}}
+    @endpush
 
 </x-default-layout>

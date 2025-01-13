@@ -38,10 +38,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::resource('/', MenuController::class);
             Route::resource('/detail', MenuSubController::class);
         });
-        // Resource lainnya
-        Route::resource('user', UserManagementController::class, ['as' => '']);
-        Route::resource('role', RoleManagementController::class, ['as' => '']);
-        Route::resource('permission', PermissionManagementController::class, ['as' => '']);
+        // // Resource lainnya
+        // Route::resource('user', UserManagementController::class, ['as' => '']);
+        // Route::resource('role', RoleManagementController::class, ['as' => '']);
+        // Route::resource('permission', PermissionManagementController::class, ['as' => '']);
     });
 
     // $menuSubs = MenuSub::all()->map(fn($item)=>$item->only((new MenuSub())->getFillable()));
